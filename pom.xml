@@ -3,7 +3,7 @@
 
     <groupId>org.carlspring</groupId>
     <artifactId>my-testing-artifact</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>my-testing-artifact</name>
@@ -17,7 +17,7 @@
         <connection>scm:git:git@github.com:steve-todorov/ideal-chainsaw.git</connection>
         <url>scm:git:git@github.com:steve-todorov/ideal-chainsaw.git</url>
         <developerConnection>scm:git:git@github.com:steve-todorov/ideal-chainsaw.git</developerConnection>
-        <tag>1.1.5</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
