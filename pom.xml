@@ -37,7 +37,7 @@
                 <version>2.5.3</version>
                 <configuration>
                     <goals>package</goals>
-                    <tagNameFormat>${project.version}</tagNameFormat>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
                     <pushChanges>false</pushChanges>
                 </configuration>
             </plugin>
