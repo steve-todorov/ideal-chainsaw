@@ -41,7 +41,7 @@
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <pushChanges>true</pushChanges>
                     <localCheckout>true</localCheckout>
-                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${deployUrl}1</goals>
+                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${deployUrl}</goals>
                 </configuration>
             </plugin>
         </plugins>
