@@ -11,8 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serverId />
-        <deployUrl />
+        <serverId/>
+        <deployUrl/>
     </properties>
 
     <scm>
@@ -41,7 +41,7 @@
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <pushChanges>true</pushChanges>
                     <localCheckout>true</localCheckout>
-                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${deployUrl}</goals>
+                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${deployUrl}1</goals>
                 </configuration>
             </plugin>
         </plugins>
