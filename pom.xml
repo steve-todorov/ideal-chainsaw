@@ -11,8 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serverId>carlspring</serverId>
-        <serverUrl>https://repo.carlspring.org/content/repositories/carlspring-oss-releases/</serverUrl>
+        <serverId/>
+        <deployUrl/>
     </properties>
 
     <scm>
@@ -39,9 +39,9 @@
                 <version>2.5.3</version>
                 <configuration>
                     <tagNameFormat>@{project.version}</tagNameFormat>
-                    <pushChanges>false</pushChanges>
+                    <pushChanges>true</pushChanges>
                     <localCheckout>true</localCheckout>
-                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${serverUrl}</goals>
+                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${deployUrl}</goals>
                 </configuration>
             </plugin>
         </plugins>
