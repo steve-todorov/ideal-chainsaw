@@ -1,3 +1,3 @@
 ##
 
-* `mvn release:prepare -DautoVersionSubmodules=true -DpushChanges=false`	
+* `mvn release:clean release:prepare -DautoVersionSubmodules=true -DpushChanges=false`	
