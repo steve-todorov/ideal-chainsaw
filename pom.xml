@@ -59,7 +59,9 @@
                         <configuration>
                             <rules>
                                 <requireReleaseDeps>
-                                    <message>No Snapshots Allowed!</message>
+                                    <message>
+                                        [ERROR] Snapshot dependencies are NOT allowed when performing a release!
+                                    </message>
                                     <onlyWhenRelease>true</onlyWhenRelease>
                                 </requireReleaseDeps>
                             </rules>
