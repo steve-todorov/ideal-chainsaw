@@ -11,8 +11,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serverId />
-        <deployUrl />
     </properties>
 
     <scm>
@@ -41,11 +39,29 @@
                     <gitFlowConfig>
                         <developmentBranch>master</developmentBranch>
                     </gitFlowConfig>
-<!--                    <tagNameFormat>@{project.version}</tagNameFormat>
-                    <pushChanges>true</pushChanges>
-                    <localCheckout>true</localCheckout>
-                    <goals>deploy -DaltDeploymentRepository=${serverId}::default::${deployUrl}</goals>-->
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M2</version>
+                <executions>
+                    <execution>
+                        <id>enforce-no-snapshots</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireReleaseDeps>
+                                    <message>No Snapshots Allowed!</message>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                </requireReleaseDeps>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
