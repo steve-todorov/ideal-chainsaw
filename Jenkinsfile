@@ -1,4 +1,4 @@
-@Library('jenkins-shared-libraries') _
+@Library('jenkins-shared-libraries@SB-1380') _
 
 mavenCentralReleasePipeline(
     mvnGpgKeyFile: '39c1e0c1-ed34-4c18-9c78-6db8aaae0000',
