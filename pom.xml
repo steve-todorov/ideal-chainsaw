@@ -44,6 +44,17 @@
                     <gitFlowConfig>
                         <developmentBranch>master</developmentBranch>
                     </gitFlowConfig>
+                    <commitMessages>
+                        <releaseStartMessage>[release] Releasing @{version}</releaseStartMessage>
+                        <releaseVersionUpdateMessage>[release] Update for next development version</releaseVersionUpdateMessage>
+                        <tagReleaseMessage>[release] Tag release</tagReleaseMessage>
+                        <releaseFinishMergeMessage>[release] Merge branch 'release/@{version}'</releaseFinishMergeMessage>
+                        <!--
+                            The release finish message specifically does not have a [release], so that Jenkins
+                            will build the new development version.
+                          -->
+                        <releaseFinishMessage>Update for next development version</releaseFinishMessage>
+                    </commitMessages>
                 </configuration>
             </plugin>
             <plugin>
