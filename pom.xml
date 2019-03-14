@@ -11,6 +11,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gpg.keyid/>
+        <gpg.passfile/>
     </properties>
 
     <scm>
@@ -46,7 +48,8 @@
                     </gitFlowConfig>
                     <commitMessages>
                         <releaseStartMessage>[release] Releasing @{version}</releaseStartMessage>
-                        <releaseVersionUpdateMessage>[release] Update for next development version</releaseVersionUpdateMessage>
+                        <releaseVersionUpdateMessage>[release] Update for next development version
+                        </releaseVersionUpdateMessage>
                         <tagReleaseMessage>[release] Tag release</tagReleaseMessage>
                         <releaseFinishMergeMessage>[release] Merge branch 'release/@{version}'</releaseFinishMergeMessage>
                         <!--
@@ -57,30 +60,47 @@
                     </commitMessages>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M2</version>
-                <executions>
-                    <execution>
-                        <id>enforce-no-snapshots</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireReleaseDeps>
-                                    <message>
-                                        [ERROR] Snapshot dependencies are NOT allowed when performing a release!
-                                    </message>
-                                    <onlyWhenRelease>true</onlyWhenRelease>
-                                </requireReleaseDeps>
-                            </rules>
-                            <fail>true</fail>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>sign-artifacts</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>${gpg.keyid}</keyname>
+                                    <!-- your server id must match the gpg.keyid -->
+                                    <!-- This does not work because Jenkins does not have a way to provide a serverId
+                                         which only has `passphrase`. You can only use user/password serverId -->
+                                    <!-- <passphraseServerId>${gpg.keyid}</passphraseServerId> -->
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                        <arg>--passphrase-file</arg>
+                                        <arg>${gpg.passfile}</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
