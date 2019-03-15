@@ -7,3 +7,4 @@ mavenCentralReleasePipeline(
     mvnGpgSignProfile: 'sign-artifacts',
     chatNotifications: false
 )
+
