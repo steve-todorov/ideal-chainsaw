@@ -1,11 +1,11 @@
 ---
 name: ⛔ Support Question
-about: Please check out the [User Guide] or join our chat channel [![RocketChat.Community.Channel][chat-badge]][chat-link]
+about: Please check out https://strongbox.github.io/ or join our chat channel!
 ---
 
 We use GitHub issues only for bugs and new features. If you have support related question, 
-please come to our channel!  
-[![RocketChat.Community.Channel](https://chat.carlspring.org/images/join-chat.svg)](https://chat.carlspring.org/channel/community)
+please check out our [User Guide] or come to our channel!  
+[![RocketChat.Community.Channel][chat-badge]][chat-link]
 
 Thanks!
 
