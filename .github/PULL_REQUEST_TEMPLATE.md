@@ -15,7 +15,7 @@ This pull request fixes #{ISSUE-NUMBER}
 | Does this break backwards compatibility? | Yes \| No |
 | Requires update of documentation?  | Yes, see strongbox/strongbox-docs/{PR_NUMBER} \| No |  
 
-# List of PR-s to be merged first
+# List of Other Pull Requests To Be Merged First
 <!-- 
 Sometimes there are other PRs which need to be merged before this one due to 
 the hierarchy of the project. If that's the case, please list them in the correct order, i.e.:
