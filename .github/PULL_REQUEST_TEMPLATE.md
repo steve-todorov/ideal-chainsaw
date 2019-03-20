@@ -13,7 +13,7 @@ This pull request fixes #{ISSUE-NUMBER}
 | Question | Answer  |
 | -------- | ------- |
 | Does this break backwards compatibility? | Yes \| No |
-| Requires update of documentation? Yes, see strongbox/strongbox-docs/{PR_NUMBER} \| No |  
+| Requires update of documentation?  | Yes, see strongbox/strongbox-docs/{PR_NUMBER} \| No |  
 
 # List of PR-s to be merged first
 <!-- 
