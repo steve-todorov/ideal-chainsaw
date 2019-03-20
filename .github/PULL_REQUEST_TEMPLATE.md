@@ -1,16 +1,21 @@
-## Description
+# Description
 
-This pull request closes #{ISSUE-NUMBER}
+This pull request fixes #{ISSUE-NUMBER}
 
-## Please answer
+# Acceptance Test
+
+* [ ] Building the code and running `mvn spring-boot:run` in the `strongbox-web-core` still starts up the application correctly.
+* [ ] Building the code and running the `strongbox-distribution` from a `zip` or `tar.gz` still works.
+* [ ] The tests in the [`strongbox-web-integration-tests`](https://github.com/strongbox/strongbox-web-integration-tests/) still run properly.
+
+# Questions
 
 | Question | Answer  |
 | -------- | ------- |
-| Type? | Bug fix \| Feature \| Refactoring |
-| Breaks backwards compatibility? | Yes \| No |
-| Docs PR | strongbox/strongbox-docs/{PR_NUMBER} \| Not needed |  
+| Does this break backwards compatibility? | Yes \| No |
+| Requires update of documentation? Yes, see strongbox/strongbox-docs/{PR_NUMBER} \| No |  
 
-## Merge before this PR
+# List of PR-s to be merged first
 <!-- 
 Sometimes there are other PRs which need to be merged before this one due to 
 the hierarchy of the project. If that's the case, please list them in the correct order, i.e.:
@@ -20,6 +25,3 @@ the hierarchy of the project. If that's the case, please list them in the correc
 
 None or Ordered List
 
-## Additional notes
-
-Any additional information.
