@@ -4,7 +4,11 @@
     <groupId>org.carlspring</groupId>
     <artifactId>maven-central-testing-artifact</artifactId>
     <version>1.1.35-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>testing-module</module>
+    </modules>
 
     <name>maven-central-testing-artifact</name>
     <url>http://maven.apache.org</url>
@@ -57,7 +61,8 @@
                         <releaseVersionUpdateMessage>[release] Update for next development version
                         </releaseVersionUpdateMessage>
                         <tagReleaseMessage>[release] Tag release</tagReleaseMessage>
-                        <releaseFinishMergeMessage>[release] Merge branch 'release/@{version}'</releaseFinishMergeMessage>
+                        <releaseFinishMergeMessage>[release] Merge branch 'release/@{version}'
+                        </releaseFinishMergeMessage>
                         <!--
                             The release finish message specifically does not have a [release], so that Jenkins
                             will build the new development version.
@@ -72,55 +77,55 @@
 
 
     <profiles>
-    <profile>
-        <id>sign-artifacts</id>
-        <activation>
-            <activeByDefault>false</activeByDefault>
-        </activation>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.1.0</version>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
-                    <executions>
-                        <execution>
-                            <id>sign-artifacts</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                            <configuration>
-                                <keyname>${gpg.keyid}</keyname>
-                                <!-- your server id must match the gpg.keyid -->
-                                <!-- This does not work because Jenkins does not have a way to provide a serverId
-                                     which only has `passphrase`. You can only use user/password serverId -->
-                                <!-- <passphraseServerId>${gpg.keyid}</passphraseServerId> -->
-                                <gpgArguments>
-                                    <arg>--pinentry-mode</arg>
-                                    <arg>loopback</arg>
-                                    <arg>--passphrase-file</arg>
-                                    <arg>${gpg.passfile}</arg>
-                                </gpgArguments>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
+        <profile>
+            <id>sign-artifacts</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>${gpg.keyid}</keyname>
+                                    <!-- your server id must match the gpg.keyid -->
+                                    <!-- This does not work because Jenkins does not have a way to provide a serverId
+                                         which only has `passphrase`. You can only use user/password serverId -->
+                                    <!-- <passphraseServerId>${gpg.keyid}</passphraseServerId> -->
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                        <arg>--passphrase-file</arg>
+                                        <arg>${gpg.passfile}</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
