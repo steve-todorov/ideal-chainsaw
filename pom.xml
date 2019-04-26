@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.carlspring</groupId>
-    <artifactId>maven-central-testing-artifact</artifactId>
+    <artifactId>maven-central-testing-artifact123</artifactId>
     <version>1.1.35-SNAPSHOT</version>
     <packaging>pom</packaging>
 
