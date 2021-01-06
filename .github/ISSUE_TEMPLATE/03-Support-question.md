@@ -1,6 +1,10 @@
 ---
-name: ⛔ Support Question
+name: "⛔ Support Question"
 about: Please check out https://strongbox.github.io/ or join our chat channel!
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 We use GitHub issues only for bugs and new features. If you have support related question, 
